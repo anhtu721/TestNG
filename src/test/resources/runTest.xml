@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <listeners>
+  	<listeners class-name = "demo.ManageListener"/>"
+  </listeners>
+  
+  <test name="Test">
+    <classes>
+      <class name="demo.vn.Testcase_01_CreateTestNG"/>
+      <class name="demo.vn.Testcase_02_CreateWithPlugin"/>
+      <class name="demo.vn.Testcase_03_CreateNew"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
