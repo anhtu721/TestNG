@@ -14,7 +14,6 @@ public class Testcase_03_CreateNew {
 
 	@Test(dataProvider = "user_account")
 	public void test03(String userName, String passWord) {
-		System.out.println("Run test case: ");
 		System.out.println("Show user: " + userName);
 		System.out.println("Show password: " + passWord);
 	}

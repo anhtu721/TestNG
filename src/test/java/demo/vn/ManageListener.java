@@ -8,6 +8,7 @@ public class ManageListener implements ITestListener{
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		System.out.println("Test Implement: ");
 	}
 
 	public void onTestSuccess(ITestResult result) {

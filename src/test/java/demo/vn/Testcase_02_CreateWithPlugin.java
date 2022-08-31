@@ -7,7 +7,8 @@ import org.testng.annotations.BeforeTest;
 
 public class Testcase_02_CreateWithPlugin {
   @Test
-  public void f() {
+  public void Login() {
+	  System.out.println("Successfull");
   }
   @BeforeMethod
   public void beforeMethod() {
