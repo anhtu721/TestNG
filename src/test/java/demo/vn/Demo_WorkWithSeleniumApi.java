@@ -2,11 +2,13 @@ package demo.vn;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -116,13 +118,47 @@ public class Demo_WorkWithSeleniumApi {
 
 	}
 	
-	@Test
+	//@Test
 	public void test_05_checkbox() {
 		//Truy cap vao trang web
 		driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F");
 		// Tim text box va click
 		driver.findElement(By.xpath("//input[@id='Newsletter']")).click();
 		sleepInSeconds(3);
+	}
+	
+	//@Test
+	public void test_06_alert() {
+		// truy cap vao trang web
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+		// tim element va click vao no
+		WebElement btnDoubleClick = driver.findElement(By.xpath("//button[text()='Double-Click Me To See Alert']"));
+		// su dung action de co the thao tac
+		Actions action = new Actions(driver);
+		
+		// thuc thi acction, perform de thc thi
+		action.doubleClick(btnDoubleClick).perform();
+		sleepInSeconds(3);
+		
+		Alert alert = driver.switchTo().alert();
+		System.out.println("Alert text:" + alert.getText());
+		alert.accept();
+		sleepInSeconds(3);
+	}
+	
+	//test keo tha
+	@Test
+	public void test_07_dragAndDrop() {
+		driver.get("https://demo.guru99.com/test/drag_drop.html");
+		//diem a
+		WebElement a = driver.findElement(By.xpath("//li[@id='credit2']"));
+		// diem b
+		WebElement b = driver.findElement(By.xpath("//ol[@id='bank']"));
+		Actions action = new Actions(driver);
+		// thuc hien 
+		action.dragAndDrop(a, b).build().perform();
+		sleepInSeconds(3);
+		
 	}
 	
 	public void sleepInSeconds(long timeout) {
