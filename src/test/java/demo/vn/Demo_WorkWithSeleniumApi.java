@@ -147,7 +147,7 @@ public class Demo_WorkWithSeleniumApi {
 	}
 	
 	//test keo tha
-	@Test
+	//@Test
 	public void test_07_dragAndDrop() {
 		driver.get("https://demo.guru99.com/test/drag_drop.html");
 		//diem a
